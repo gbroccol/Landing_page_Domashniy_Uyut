@@ -97,7 +97,19 @@ button:hover {
 }
 
 .icons img {
-  background-color: rgb(255, 255, 255);
+  /* background-color: rgb(255, 255, 255); */
+}
+
+.icons .telegram :hover {
+  background-color: rgb(114, 196, 236);
+}
+
+.icons .vk :hover {
+  background-color: rgb(39, 135, 245);
+}
+
+.icons .whatsapp :hover {
+  background-color: rgb(37, 211, 102);
 }
 
 .myContainer {
