@@ -1,0 +1,712 @@
+* {
+    margin: 0;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* links */
+
+a:link {
+    color: rgb(255, 255, 255);
+    /* background-color: transparent; */
+    text-decoration: none;
+}
+
+a:visited {
+    color: rgb(255, 255, 255);
+    /* background-color: transparent; */
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(255, 255, 255);
+    /* background-color: transparent; */
+    text-decoration: underline;
+}
+
+a:active {
+    color: rgb(255, 255, 255);
+    /* background-color: transparent; */
+    text-decoration: underline;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 40px;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 40px;
+}
+
+h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+}
+
+/* обычный текст */
+h4 {
+  color: #000000;
+  font-weight: 100;
+  font-size: 18px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h5 {
+  color: #808080;
+  font-weight: 100;
+  font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+button {
+  background-color: #f0621a;
+  border: 0;
+  border-radius: 5px;
+  padding: 10px 20px;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  transition: border-radius 0.4s ease-in;
+}
+
+button:hover {
+  background-color: #df520c;
+  border-radius: 30px;
+}
+
+/* .container {
+  width: 100%;
+  max-width: 1024px;
+  padding: 0 15px;
+  margin: 0 auto;
+} */
+
+/* icons */
+.icons {
+  display: inline-flex;
+  margin: 25px;
+}
+
+.icons .iconsCircle {
+  margin: 5px;
+  padding: 5px 10px 5px 10px;
+
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+}
+
+.icons img {
+  background-color: rgb(255, 255, 255);
+}
+
+.myContainer {
+  margin-right: auto;
+  margin-left: auto;
+  /* max-width: 1800px; */
+}
+
+/* @media (min-width: 1200px) {
+  .myContainer {
+    max-width: 1140px;   
+  }
+
+} */
+
+/* .containerCarousel {
+  max-width: 1400px;
+  margin-right: auto;
+    margin-left: auto;
+} */
+
+@media (max-width: 800px) { /* 1 карточка */
+  
+  .rooms .myContainer {
+    max-width: 470px;
+  }
+}
+
+@media (min-width: 800px) { /* 2 карточки */
+  
+  .rooms .myContainer {
+    width: 800px;
+  }
+}
+
+@media (min-width: 1140px) { /* 3 карточки */
+  
+  .rooms .myContainer {
+    width: 1140px;
+  }
+}
+
+@media (min-width: 1480px) { /* 4 карточки */
+  
+  .rooms .myContainer {
+    width: 1480px;
+  }
+}
+
+/* 5 карточки */
+@media (min-width: 2560px) { 
+  
+  .rooms .myContainer {
+    width: 1820px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* header */
+
+header {
+    width: 100%;
+
+    background-color: rgb(0, 0, 0, 0.6);
+
+    color: rgb(255, 255, 255);
+
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    /* position */
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+
+    /* background-color: rgba(255, 0, 0, 0.6); */
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+
+  font-size: 18px;
+  list-style-type: none;
+}
+
+header nav li{
+  padding-left: 30px;
+}
+
+header .logo {
+  text-align: center;
+}
+
+header .infa {
+  display: inline-flex;
+  justify-content: space-around;
+  align-items: center;
+
+  margin: 0  25px 0 0;
+}
+
+.infaContacts p,
+.infaContacts u {
+  color: rgb(255, 255, 255);
+  font-size: 12px;
+
+  line-height: 1.3em;
+
+  font-weight: 500;
+
+  margin: 0;
+
+  text-align: right;
+
+  font-family: 'Open Sans', sans-serif;
+}
+
+@media (max-width: 425px) {
+  
+  header nav,
+  header .infa {
+    display: none;
+  }
+  
+  header .logo img {
+    width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  
+  header nav,
+  header .infa {
+    display: none;
+  }
+  
+  header .logo img {
+    width: 80%;
+  }
+}
+
+@media (max-width: 1230px) {
+  
+  header .infa .infaContacts,
+  header .infa .icons {
+    display: none;
+  }
+  
+  header .logo img {
+    width: 80%;
+  }
+}
+
+/* body */
+
+.menuPhoto {
+    height: 100vh;
+    width: 100%;
+
+    background-color: rgb(255, 255, 255);
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(img/photo01.jpg);
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: center;
+
+    display: flex;
+}
+
+.menuPhotoInfa {
+  width: 1140px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menuPhotoInfaText {
+  max-width: 800px;
+}
+
+.menuPhotoInfaText h3 {
+  color: rgb(255, 255, 255);
+  font-weight: 700;
+  font-family: 'Roboto', sans-serif;
+}
+
+.menuPhotoInfaText h1 {
+  color: rgb(255, 255, 255);
+  font-size: 62px;
+}
+
+.menuPhotoInfaBookForm {
+  padding: 30px;
+  background-color: rgb(255, 255, 255);
+}
+
+.menuPhotoInfaBookForm h3 {
+  font-weight: 600;
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+  padding-bottom: 8px;
+}
+
+.menuPhotoInfaBookForm .inputField {
+  width: 290px;
+  margin: 15px 0px;
+  padding-right: 8px;
+  background-color:#f0f0f0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.menuPhotoInfaBookForm input {
+  color:#000000;
+  background-color:#f0f0f0;
+  border-style: none;
+  margin: 0px 0px;
+  padding: 15px 0px;
+  padding-left: 8px;
+  font-weight: 100;
+}
+
+.menuPhotoInfaBookForm button {
+  width: 100%;
+  background-color: #000000;
+  border-radius: 0px;
+  padding: 15px;
+}
+
+.rooms,
+.aboutUs,
+.comfort,
+.booking, 
+.contacts,
+footer {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.rooms,
+.comfort,
+.contacts {
+    background-color: rgb(245, 245, 245);
+}
+
+.aboutUs,
+.booking {
+    background-color: rgb(255, 255, 255);
+}
+
+/* room */
+
+.rooms H2 {
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.carousel {
+  width: 100%;
+  padding: 10px 60px;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  font-size: 24px;
+  line-height: 24px;
+  color: rgb(0, 0, 0);
+  background-color: #ccc;
+  display: block;
+  width: 35px;
+}
+
+.arrow:focus {
+  outline: none;
+}
+
+.arrow:hover {
+  background: #ccc;
+  cursor: pointer;
+  /* border-radius: 50%;  */
+}
+
+.prev {
+  left: 7px;
+  padding: 10px 10px;
+}
+
+.next {
+  right: 7px;
+  padding: 10px 10px;
+}
+
+.gallery {
+  width: 100%;
+  overflow: hidden;
+}
+
+.gallery .images {
+  width: 9999px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  transition: margin-left 250ms;
+
+  /* margin-left: -160px; */
+}
+
+.gallery li {
+  display: inline-block;
+}
+
+
+
+
+
+.carousel .roomCard {
+  max-width: 340px;
+  padding: 0 10px;
+}
+
+
+/* .allCards {
+  margin: 50px 0 0 0;
+  display: flex;
+  justify-content: space-between;
+} */
+
+/* .roomCard { */
+  /* width: 340px; */
+
+  /* background-color: black; */
+
+  /* z-index; */
+
+  /* opacity: 50%; */
+
+  /* height: 300px; */
+/* } */
+
+/* .roomCard:hover {
+  background-color: aliceblue;
+} */
+
+/* .roomCard {
+  background: linear-gradient(to bottom, rgba(72,76,97,0) 0%, rgba(72,76,97,0.8) 75%);
+  content: '';
+  opacity: 0;
+  -webkit-transform: translate3d(0,50%,0);
+  transform: translate3d(0,50%,0);
+} */
+
+.roomPhoto {
+  position: relative;
+  height: 230px;
+  overflow: hidden;
+
+}
+
+.roomPhoto h1 {
+  color: rgb(255, 255, 255);
+  font-size: 22px;
+  text-shadow: 1px 1px 1px black, 0 0 1em black; /* Параметры тени */
+
+  position: absolute;
+  top: 185px;
+  left: 10px;
+}
+
+.roomPhoto img {
+  height: 100%;
+}
+
+.roomInfa{
+  padding: 10px 0 0 0;
+}
+
+.roomInfa p {
+  padding-top: 15px;
+  font-size: 14px;
+  margin: 0;
+}
+
+.roomInfa .roomSize {
+  font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 100;
+}
+
+.roomSize p {
+  font-size: 16px;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.roomSize h5 {
+  margin: 0; 
+}
+
+.roomInfa ul {
+  padding: 0;
+  margin: 0;
+}
+
+.roomInfa li {
+  font-size: 12px;
+  /* list-style-type: none; */
+  font-family: 'Open Sans', sans-serif;
+  display: flex;
+
+
+  list-style-type: none;
+
+
+}
+
+.roomInfa .price {
+  padding-top: 10px;
+  font-size: 20px;
+}
+
+.roomInfa .price h5 {
+  font-size: 14px;
+  text-align: right;
+  margin: 0;
+}
+
+.roomInfa button {
+  border-radius: 30px;
+  margin-top: 10px;
+}
+
+/* aboutUs */
+.aboutUsText {
+  display: inline-flex;
+  justify-content: space-around;
+  align-content: center;
+}
+
+.aboutUsText .part1 {
+  width: 25%;
+}
+
+.part1 h2 {
+  padding-bottom: 10px;
+}
+
+.part1 h5 {
+  font-weight: 400;
+  color: #575757;
+
+  padding-top: 12px;
+}
+
+.aboutUsText .part2 {
+  width: 45%;
+
+  align-self: center;
+}
+
+.part2 h4 {
+  margin: 25px 0;
+}
+
+/* comfort */
+
+.comfort .row {
+  margin: 0 110px;
+}
+
+.comfort h2 {
+  text-align: center;
+}
+
+.comfort h4 {
+  text-align: center;
+  padding: 10px 0 40px 0;
+}
+
+.item {
+  display: flex;
+  padding-top: 25px;
+}
+
+.item img {
+  width: 60px;
+  margin-right: 25px;
+  
+}
+
+.item .text p {
+  margin: 0;
+}
+
+.text h4 {
+  text-align: left;
+  padding: 0;
+  font-size: 12px;
+}
+
+
+
+
+.booking {
+  background-color: rgb(255, 255, 255);
+  background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(img/book.jpg);
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: center;
+
+  text-align: center;
+
+  padding: 0 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 60vh;
+
+
+  /* position: -webkit-sticky; */
+/* position: sticky;
+top: 200px; */
+
+/* z-index: 1; */
+
+}
+.booking .container {
+  width: 700px;
+}
+
+.booking H2 {
+  padding: 0 0 20px 0;
+  color: rgb(255, 255, 255);
+}
+
+.booking h3 {
+  padding: 0 0 50px 0;
+  color: rgb(255, 255, 255);
+}
+
+/* .contacts */
+
+.contacts {
+  padding: 100px 0 0 0;
+}
+
+.contacts .container {
+  padding: 0 50px;
+}
+
+.contacts h2 {
+  text-align: center;
+}
+
+hr {
+  width: 10%;
+  margin: 20px 45%;
+}
+
+.contacts h4 {
+  text-align: center;
+}
+
+.contacts span {
+  color: #808080;
+  font-weight: 100;
+  font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.contacts .icons {
+  display: flex;
+  justify-content: center;
+}
+
+.contacts .icons img {
+  background-color: rgb(255, 198, 145);
+}
+
+.contacts .icons .iconsCircle {
+  background-color: rgb(255, 198, 145);
+}
+
+
+/* footer {
+    background-color: rgb(0, 0, 0);
+    z-index: 10;
+} */
+

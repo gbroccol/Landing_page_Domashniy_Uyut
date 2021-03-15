@@ -1,0 +1,836 @@
+<!-- Блочные элементы -->
+<!-- 
+	абзацы <р>
+	списки: маркированные (с маркером) <ul> и нумерованные (с числами) <ol>
+	заголовки: от первого уровня <h1> до шестого уровня <h6>
+	статьи <article>
+	разделы <section>
+	длинные цитаты <blockquote>
+	блоки общего назначения  <div> 
+-->
+
+<!-- Строчные элементы -->
+<!--
+	ссылки <a>
+	выделенные слова <em>
+	важные слова <strong>
+	короткие цитаты <q>
+	аббревиатуры <abbr>
+-->
+
+<!-- Списки -->
+<!-- 
+	Маркированный 
+	Список из неупорядоченных элементов.
+
+	Состоит из двух тегов:
+
+	<ul> (unordered list) - тег начала и конца списка
+	<li> (list item) - пункт списка
+-->
+<!-- 
+	Нумерованный
+	Упорядоченный список, каждый пункт имеет свой номер.
+
+	Состоит из двух тегов:
+
+	<ol> (ordered list) - тег начала и конца списка
+	<li> (list item) - пункт списка
+-->
+<!-- 
+	Список определений
+	Используются для создания списка терминов и их определений. В общем случае, каждый пункт — это пара "имя/значение".
+
+	Состоит из трёх тегов:
+
+	<dl> (description list) - тег начала и конца списка
+	<dt> (term) - термин
+	<dd> (description) - определение
+-->
+
+<!-- Изображения -->
+<!-- 
+	Для добавления изображения используется тег <img>. Это одинарный тег. Вот его основные атрибуты:
+	src - ссылка на картинку﻿
+	alt - текст, который отображается вместо картинки, если она не загрузилась
+	title - текст, который отображается при наведении мыши на картинку
+	width - ширина картинки в пикселях
+	height - высота картинки в пикселях
+ -->
+
+<!-- Блочная модель -->
+<!-- https://tpverstak.ru/flex-cheatsheet/ -->
+<!-- 
+	Блокам можно задать:
+
+	ширину (width) и высоту (height)
+	отступы: внутренние (padding) и внешние (margin)
+	границы (border)
+	Эти свойства вместе с содержимым элемента составляют его блочную модель
+-->
+
+<!-- Переполнение контента -->
+<!-- 
+	overflow: visible; - отображается все содержание блока, даже за пределами установленной высоты и ширины.
+	overflow: hidden; - отображается только область внутри блока, остальное будет скрыто.
+	overflow: scroll; - всегда добавляются полосы прокрутки, даже если контент помещается.
+	overflow: auto; - полосы прокрутки добавляются только при необходимости. 
+-->
+
+<!-- float -->
+<!-- 
+	Свойство float может иметь следующие значения:
+
+	left - выравнивание по левой стороне, обтекание справа,
+	right  - выравнивание по правой стороне, обтекание слева,
+	none - выравнивание не задаётся (нужно, чтобы сбросить ранее заданное значение)
+-->
+
+<!-- Clearfix - решение проблем связанных с float -->
+<!-- 
+	Проблема 1
+	Родительский блок, который содержит только элементы со свойством float, "схлопывается" и принимает высоту равную нулю. 
+
+	Проблема 2
+	Если в родительском блоке помимо "плавающих" (floating) элементов есть статические элементы, к которым мы не применяли float, то высота родителя станет равной высоте этих статических элементов
+
+	Проблема 3
+	Следствие проблемы 2. Такие "вываливающиеся" блоки будут обтекаться контентом блоков, которые идут после родительского. 
+
+	Решение
+	Чтобы избавиться от этих проблем, необходимо после "плавающих" блоков очищать обтекания, чтобы последующие элементы не стали обтекать "плавающие" блоки.
+
+	Самое простое решение - очищающий блок. После плавающих блоков нужно добавить еще один блок и задать ему CSS:
+
+	clear: both;
+
+	Пример: https://codepen.io/mlshv/pen/bQobdW
+
+	Борьба с выпаданием флоатов из родительского контейнера может идти по двум направлениям:  распоркой или псевдораспоркой.
+
+	Вариант с распоркой. Добавляем после зафлоаченных блоков пустой элемент-распорку со свойством clear:both.  Этот элемент видит колонки, не даёт им пройти через себя, а заодно и растягивает родительский блок по высоте.
+	Для таких распорок прижилось специальное название класса — clearfix.
+
+	Вариант с псевдораспоркой.  Этот способ с псевдораспоркой позволяет избавиться от дополнительного элемента - распорки. Для эгото родительскому контейнеру задаём класс clearfix со следующими свойствами:
+
+	.clearfix::after {
+				content: "";
+				display: table;
+				clear: both;
+			}
+
+-->
+
+<!-- Позиционирование position -->
+<!-- 
+	Статическое позиционирование (static)
+	Этот тип стоит у элементов по умолчанию. Элемент располагается в потоке относительно остальных элементов на странице. В потоке, то есть в таком порядке, что он идёт после элементов, которые объявлены перед ним. И элементы, которые объявлены после него, идут после него.
+
+	Абсолютное позиционирование (absolute)
+	Забавно, что абсолютное позиционирование - тоже относительное. Но задаётся оно по-другому.
+	Положение абсолютного блока задаётся относительно страницы или относительно элемента с position: relative, в которой он вложен. Положение такого блока задаётся с помощью свойств top, right, bottom, left
+
+	Фиксированное позиционирование (fixed)
+	Задаётся так же, как и абсолютное, но блок прикрепляется не к странице, а к экрану. То есть при прокрутке страницы он остаётся на своём месте. Пример - шапка на степике.
+
+	Relative позиционирование (position: relative)
+	Положение элемента устанавливается относительно его исходного места в потоке. 
+	Свойства left, top, right и bottom изменяет позицию элемента и сдвигает его в 
+	ту или иную сторону от первоначального расположения. 
+	А ещё оно работает как родитель, относительно которого можно задавать 
+	абсолютную позицию блокам, которые в него вложены.
+
+-->
+
+<!-- Псевдоклассы -->
+<!-- 
+	:hover - появляется при наведении мышки
+	:active - появляется при нажатии на элемент
+	:focus - появляется при фокусировке на элементе (например, когда выбрано поле ввода текста)
+
+	https://developer.mozilla.org/ru/docs/Web/CSS/Pseudo-classes
+-->
+
+<!-- Анимация переходов -->
+<!-- 
+	За анимацию отвечает свойство transition. Его значние записывается так:
+
+свойство, изменения которого нужно анимировать (если нужно анимировать несколько, можно написать all)
+продолжительность анимации в секундах (рекомендуется не ставить её больше 0.3 секунды)
+функция плавности, подробнее здесь: https://easings.net/ru
+Вот полный список доступных для анимаций свойств: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties
+-->
+
+<!-- Медиа-запросы -->
+<!-- 
+	@media screen and (max-width: 320px) {
+		img {
+			width: 100%;
+		}
+	}
+	Этот код означает следующее: на экранах, ширина которых меньше или равна 320px, картинки будут иметь ширину 100%.
+
+	Подробнее про синтаксис читай в документации MDN: https://developer.mozilla.org/ru/docs/Web/CSS/Media_Queries/Using_media_queries
+-->
+
+
+
+
+
+
+<!-- 
+	SPA (Single Page Application) - наверное, ты знаешь, что есть сайты, которые при переходе между страницами не перезагружают страницу в браузере. Это SPA - одностраничные приложения. Они работают быстрее и плавнее, но разрабатывать их гораздо сложнее.
+	PWA (Progressive Web App) - технология, которая позволяет скачать сайт и добавить его на рабочий стол или в меню телефона. Он будет открываться даже без интернета и занимать очень маленький размер по сравнению с аналогичным приложением из AppStore или Google Play. Такие приложения уже есть у Instagram, ВК, Tinder, Telegram, AliExpress и много кого ещё. 
+-->
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Подключаем Bootstrap CSS -->
+	<link rel="stylesheet" href="lib/css/bootstrap.min.css">
+
+
+	<title> Домашний уют </title>
+
+
+	<!-- h2 -->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+
+	<!-- h3 -->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
+
+	<!-- the smallest -->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+
+
+	<!-- <link rel="stylesheet" href="lib/normalize.css"> -->
+	<link rel="stylesheet" href="style.css">
+
+
+
+
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+
+
+
+</head>
+
+<body>
+
+
+	<!-- <script>
+		document.body.style.background = 'red';
+	</script> -->
+
+
+	<header>
+		<nav>
+			<li> <a href="#aboutHotel">Об отеле</a> </li>
+			<li> <a href="#rooms">Квартиры</a> </li>
+			<li> <a href="#contacts">Контакты</a> </li>
+		</nav>
+
+		<a href="/" class="logo">
+			<img src="img/logo.png" title="mainphoto" width="100%">
+		</a>
+
+		<div class="infa">
+			<div class="infaContacts">
+				<p> г. Кстово, Нижегородская область,
+				<p> гостиница «Домашний уют»
+				<p> <a title="Позвонить" href="tel: +7(951)916-46-03"> <u> +7 (951) 916-46-03 </u> </a>
+			</div>
+
+			<div class="icons">
+				<div class="iconsCircle">
+					<img src="img/telegram.svg" title="mainphoto" width="15px">
+				</div>
+				<div class="iconsCircle">
+					<img src="img/vk.svg" title="mainphoto" width="15px">
+				</div>
+				<div class="iconsCircle">
+					<img src="img/whatsapp.svg" title="mainphoto" width="15px">
+				</div>
+			</div>
+			<div>
+				<button>Забронировать</button>
+			</div>
+		</div>
+	</header>
+
+	<main>
+
+		<div class="menuPhoto">
+			<!-- <div class="container"> -->
+			<div class="menuPhotoInfa">
+				<div class="menuPhotoInfaText">
+					<h3> "Гости возвращаются к нам и мы этим гордимся, попробуй!"
+						<br> P.S. Павел и Марина
+					</h3>
+					<h1> Квартиры посуточно в Кстово </h1>
+				</div>
+				<div class="menuPhotoInfaBookForm">
+					<div>
+						<h3> Проверить наличие номеров </h3>
+					</div>
+					<div class="inputField">
+						<input type="text" name="Date" class="" value="" placeholder="Заезд">
+						<img src="img/calendar.svg" alt="" width="30px">
+					</div>
+					<div class="inputField">
+						<input type="text" name="Date" class="" value="" placeholder="Выезд">
+						<img src="img/calendar.svg" alt="" width="30px">
+					</div>
+					<div>
+						<button>Показать варианты</button>
+					</div>
+				</div>
+			</div>
+			<!-- </div> -->
+		</div>
+
+
+		<div id="rooms" class="rooms">
+
+			<div class="myContainer">
+
+				<h2>Наши квартиры</h2>
+
+
+
+
+				<div id="carousel" class="carousel">
+
+					<button class="arrow prev"> ❰ </button>
+					<div id="gallery" class="gallery">
+						<ul class="images">
+
+							<li>
+								<div id="roomCard" class="roomCard">
+									<div class="roomPhoto">
+										<img src="img/room0_00.jpg">
+										<h1> Однокомнатная </h1>
+									</div>
+									<div class="roomInfa">
+
+										<div class="roomSize">
+											<p> Размер квартиры - 32м²
+											<h5>1-4 человека</h5>
+										</div>
+
+										<p> О квартире:
+										<ul>
+											<li> Большая двуспальная кровать </li>
+											<li> Вид на город </li>
+											<li> Быстрый интернет </li>
+											<li> Парковка </li>
+										</ul>
+
+										<p>Инфраструктура рядом:
+										<ul>
+											<li>аквапарк Атолл, площадь Ленина, площадь Мира, ресторан «Додо Пицца»
+											</li>
+										</ul>
+
+										<div class="price">
+											от 1300р.*
+											<h5> *цена указана до 2 человек </h5>
+										</div>
+										<button>Забронировать</button>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="roomCard">
+									<div class="roomPhoto">
+										<img src="img/room1_00.jpg">
+										<h1> Двухкомнатная с сауной </h1>
+									</div>
+									<div class="roomInfa">
+
+										<div class="roomSize">
+											<p> Размер квартиры - 45м²
+											<h5>1-4 человека</h5>
+										</div>
+
+										<p> О квартире:
+										<ul>
+											<li> Услуга "Завтрак в номер" </li>
+											<li> Сад с беседкой и мангалом </li>
+											<li> Зоны для курения </li>
+											<li> Проведение праздников </li>
+											<li> Парковка </li>
+										</ul>
+
+										<p>Инфраструктура рядом:
+										<ul>
+											<li> продуктовые магазины, автобусная остановка </li>
+										</ul>
+
+										<div class="price">
+											от 1500р.*
+											<h5> *цена указана до 2 человек </h5>
+										</div>
+										<button>Забронировать</button>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="roomCard">
+									<div class="roomPhoto">
+										<img src="img/room2_00.png">
+										<h1> Трехкомнатная </h1>
+									</div>
+									<div class="roomInfa">
+
+										<div class="roomSize">
+											<p> Размер квартиры - 60м²
+											<h5>1-4 человека</h5>
+										</div>
+
+										<p> О квартире:
+										<ul>
+											<li> Большая двуспальная кровать </li>
+											<li> Вид на город </li>
+											<li> Быстрый интернет </li>
+											<li> Услуга "Завтрак в номер" </li>
+											<li> Парковка </li>
+										</ul>
+
+										<p>Инфраструктура рядом:
+										<ul>
+											<li> продуктовые магазины, автобусная остановка </li>
+										</ul>
+
+										<div class="price">
+											от 1700р.*
+											<h5> *цена указана до 2 человек </h5>
+										</div>
+										<button>Забронировать</button>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="roomCard">
+									<div class="roomPhoto">
+										<img src="img/room0_00.jpg">
+										<h1> Однокомнатная </h1>
+									</div>
+									<div class="roomInfa">
+
+										<div class="roomSize">
+											<p> Размер квартиры - 32м²
+											<h5>1-4 человека</h5>
+										</div>
+
+										<p> О квартире:
+										<ul>
+											<li> Большая двуспальная кровать </li>
+											<li> Вид на город </li>
+											<li> Быстрый интернет </li>
+											<li> Парковка </li>
+										</ul>
+
+										<p>Инфраструктура рядом:
+										<ul>
+											<li>аквапарк Атолл, площадь Ленина, площадь Мира, ресторан «Додо Пицца»
+											</li>
+										</ul>
+
+										<div class="price">
+											от 1300р.*
+											<h5> *цена указана до 2 человек </h5>
+										</div>
+										<button>Забронировать</button>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="roomCard">
+									<div class="roomPhoto">
+										<img src="img/room1_00.jpg">
+										<h1> Однокомнатная </h1>
+									</div>
+									<div class="roomInfa">
+
+										<div class="roomSize">
+											<p> Размер квартиры - 45м²
+											<h5>1-4 человека</h5>
+										</div>
+
+										<p> О квартире:
+										<ul>
+											<li> Услуга "Завтрак в номер" </li>
+											<li> Сад с беседкой и мангалом </li>
+											<li> Зоны для курения </li>
+											<li> Проведение праздников </li>
+											<li> Парковка </li>
+										</ul>
+
+										<p>Инфраструктура рядом:
+										<ul>
+											<li> продуктовые магазины, автобусная остановка </li>
+										</ul>
+
+										<div class="price">
+											от 1500р.*
+											<h5> *цена указана до 2 человек </h5>
+										</div>
+										<button>Забронировать</button>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="roomCard">
+									<div class="roomPhoto">
+										<img src="img/room2_00.png">
+										<h1> Однокомнатная </h1>
+									</div>
+									<div class="roomInfa">
+
+										<div class="roomSize">
+											<p> Размер квартиры - 60м²
+											<h5>1-4 человека</h5>
+										</div>
+
+										<p> О квартире:
+										<ul>
+											<li> Большая двуспальная кровать </li>
+											<li> Вид на город </li>
+											<li> Быстрый интернет </li>
+											<li> Услуга "Завтрак в номер" </li>
+											<li> Парковка </li>
+										</ul>
+
+										<p>Инфраструктура рядом:
+										<ul>
+											<li> продуктовые магазины, автобусная остановка </li>
+										</ul>
+
+										<div class="price">
+											от 1700р.*
+											<h5> *цена указана до 2 человек </h5>
+										</div>
+										<button>Забронировать</button>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="roomCard">
+									<div class="roomPhoto">
+										<img src="img/room0_00.jpg">
+										<h1> Однокомнатная </h1>
+									</div>
+									<div class="roomInfa">
+
+										<div class="roomSize">
+											<p> Размер квартиры - 32м²
+											<h5>1-4 человека</h5>
+										</div>
+
+										<p> О квартире:
+										<ul>
+											<li> Большая двуспальная кровать </li>
+											<li> Вид на город </li>
+											<li> Быстрый интернет </li>
+											<li> Парковка </li>
+										</ul>
+
+										<p>Инфраструктура рядом:
+										<ul>
+											<li>аквапарк Атолл, площадь Ленина, площадь Мира, ресторан «Додо Пицца»
+											</li>
+										</ul>
+
+										<div class="price">
+											от 1300р.*
+											<h5> *цена указана до 2 человек </h5>
+										</div>
+										<button>Забронировать</button>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="roomCard">
+									<div class="roomPhoto">
+										<img src="img/room1_00.jpg">
+										<h1> Однокомнатная </h1>
+									</div>
+									<div class="roomInfa">
+
+										<div class="roomSize">
+											<p> Размер квартиры - 45м²
+											<h5>1-4 человека</h5>
+										</div>
+
+										<p> О квартире:
+										<ul>
+											<li> Услуга "Завтрак в номер" </li>
+											<li> Сад с беседкой и мангалом </li>
+											<li> Зоны для курения </li>
+											<li> Проведение праздников </li>
+											<li> Парковка </li>
+										</ul>
+
+										<p>Инфраструктура рядом:
+										<ul>
+											<li> продуктовые магазины, автобусная остановка </li>
+										</ul>
+
+										<div class="price">
+											от 1500р.*
+											<h5> *цена указана до 2 человек </h5>
+										</div>
+										<button>Забронировать</button>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="roomCard">
+									<div class="roomPhoto">
+										<img src="img/room2_00.png">
+										<h1> Однокомнатная </h1>
+									</div>
+									<div class="roomInfa">
+
+										<div class="roomSize">
+											<p> Размер квартиры - 60м²
+											<h5>1-4 человека</h5>
+										</div>
+
+										<p> О квартире:
+										<ul>
+											<li> Большая двуспальная кровать </li>
+											<li> Вид на город </li>
+											<li> Быстрый интернет </li>
+											<li> Услуга "Завтрак в номер" </li>
+											<li> Парковка </li>
+										</ul>
+
+										<p>Инфраструктура рядом:
+										<ul>
+											<li> продуктовые магазины, автобусная остановка </li>
+										</ul>
+
+										<div class="price">
+											от 1700р.*
+											<h5> *цена указана до 2 человек </h5>
+										</div>
+										<button>Забронировать</button>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<button class="arrow next"> ❱ </button>
+				</div>
+			</div>
+
+
+
+		</div>
+
+
+
+
+
+
+		<div id="aboutHotel" class="aboutUs">
+
+			<div class="container">
+
+				<div class="aboutUsText">
+
+					<div class="part1">
+
+						<h2>О нас</h2>
+
+						<h5> г. Кстово, Нижегородская область, ул.Чернышевского, д.1,
+							<h5> +7 (951) 916-46-03
+								<h5> t9519164603@mail.ru
+
+					</div>
+
+					<div class="part2">
+
+						<h4> Если вы планируете провести время в городе Кстово,
+							с деловыми или туристическими целями,
+							гостиница "Домашний уют" идеально подойдёт для Вас.
+
+							<h4> Мы предлагаем уютные <b> квартиры во всех частях города</b>.
+								В нашем отеле вы сможете почувствовать себя как дома.
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="comfort">
+			<div class="container">
+
+				<h2>Удобства</h2>
+
+				<h4> Мы хотим, чтобы каждый мог почувствовать <br> себя свободным в нашем отеле </h4>
+
+
+				<div class="row">
+
+					<div class="col-xs-12 col-md-6 col-lg-6">
+						<div class="item">
+							<img src="img/01.png" alt="24/7">
+
+							<div class="text">
+								<p> Круглосуточное размещение
+								<h4> О позднем заселении необходимо сообщить заранее </h4>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-xs-12 col-md-6 col-lg-6">
+						<div class="item">
+							<img src="img/02.svg" alt="24/7">
+
+							<div class="text">
+								<p> Отчетные документы
+								<h4> Предоставляем понный набор отчетных документов </h4>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-xs-12 col-md-6 col-lg-6">
+						<div class="item">
+							<img src="img/03.png" alt="24/7">
+
+							<div class="text">
+								<p> В каждой квартире
+								<h4> В каждой квартире </h4>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-xs-12 col-md-6 col-lg-6">
+						<div class="item">
+							<img src="img/04.svg" alt="24/7">
+
+							<div class="text">
+								<p> Чистота
+								<h4> Мы гарантируем чистый номер по высшим стандартам качества </h4>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-xs-12 col-md-6 col-lg-6">
+						<div class="item">
+							<img src="img/05.png" alt="24/7">
+
+							<div class="text">
+								<p> Удобное месторасположение
+								<h4> Наши квартиры располагаются во всех частях города Кстово </h4>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-xs-12 col-md-6 col-lg-6">
+						<div class="item">
+							<img src="img/06.png" alt="24/7">
+
+							<div class="text">
+								<p> Парковка
+								<h4> Бесплатная общественная/частная парковка у дома </h4>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+
+
+			</div>
+		</div>
+
+		<!-- Hero-block -->
+		<div class="booking">
+
+			<div class="container">
+
+				<div>
+					<h2>Забронируйте номер</h2>
+				</div>
+
+				<div>
+					<h3> Заполните форму с информацией и мы отправим вам e-mail подтверждение </h3>
+				</div>
+				<div>
+					<button>Забронировать</button>
+				</div>
+
+			</div>
+		</div>
+
+		<div id="contacts" class="contacts">
+
+			<div class="container">
+
+
+				<h2>Нижегородская область, город Кстово ул.Чернышевского д.1</h2>
+				<hr color="#ffa958">
+
+				<h4> Телеофон: +7 (951) 916-46-03 </h4>
+				<h4> E-mail: t9519164603@mail.ru </h4>
+				<h4> Режим работы: с 7:00 до 23:00* <span> (заселение круглосуточно - уточняйте заранее)</span> </h4>
+
+				<div class="icons">
+					<div class="iconsCircle">
+						<img src="img/telegram.svg" title="mainphoto" width="15px">
+					</div>
+					<div class="iconsCircle">
+						<img src="img/vk.svg" title="mainphoto" width="15px">
+					</div>
+					<div class="iconsCircle">
+						<img src="img/whatsapp.svg" title="mainphoto" width="15px">
+					</div>
+				</div>
+
+			</div>
+
+			<script type="text/javascript" charset="utf-8" async
+				src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A51492e0da884c3eec552cae642345b8605a12119cfa4be9820af4f297cd29a8a&amp;width=100%25&amp;height=450&amp;lang=ru_UA&amp;scroll=true"></script>
+
+		</div>
+	</main>
+	<!-- <footer>
+
+		Подвал
+
+	</footer> -->
+
+
+
+
+
+	<!-- Подключаем jQuery -->
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+	<!-- Подключаем Bootstrap JS -->
+	<!-- <script src="js/bootstrap.min.js"></script> -->
+
+	<!-- <script src="js/headerScroll.js"></script> -->
+	<script src="index.js"></script>
+	<script src="carouselRoomCards.js"></script>
+
+</body>
+
+</html>
