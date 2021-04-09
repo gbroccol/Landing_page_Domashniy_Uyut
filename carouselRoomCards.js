@@ -54,3 +54,16 @@ carousel.querySelector('.next').onclick = function () {
 // 	/* display: none; */
 // 	document.button.style.display = "none";
 // }
+
+
+
+
+
+
+
+
+document.getElementById("myDate").addEventListener("change",(ev)=>{
+	if (ev&&ev.target)
+		if (ev.target.value=="")
+			ev.target.value = ev.target.dataset.default;
+});

@@ -96,9 +96,9 @@ button:hover {
   border-radius: 50%;
 }
 
-.icons img {
-  /* background-color: rgb(255, 255, 255); */
-}
+/* .icons img {
+  background-color: rgb(255, 255, 255);
+} */
 
 .icons .telegram :hover {
   background-color: rgb(114, 196, 236);
@@ -284,9 +284,10 @@ header .infa {
   }
 }
 
-/* body */
+/* BODY */
 
-.menuPhoto {
+/* BODY -> MAIN PHOTO */
+.mainPhoto {
     height: 100vh;
     width: 100%;
 
@@ -296,70 +297,75 @@ header .infa {
     background-position-x: center;
     background-position-y: center;
 
-    display: flex;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-.menuPhotoInfa {
-  width: 1140px;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.centered {				/* change to container */
+	width: 100%;
+	max-width: 1500px;
 }
 
-.menuPhotoInfaText {
-  max-width: 800px;
-}
-
-.menuPhotoInfaText h3 {
-  color: rgb(255, 255, 255);
-  font-weight: 700;
-  font-family: 'Roboto', sans-serif;
-}
-
-.menuPhotoInfaText h1 {
-  color: rgb(255, 255, 255);
-  font-size: 62px;
-}
-
-.menuPhotoInfaBookForm {
+/* BODY -> MAIN PHOTO -> BOOKING FORM */
+.mainPhotoForm {
   padding: 30px;
   background-color: rgb(255, 255, 255);
+  float: right;
 }
 
-.menuPhotoInfaBookForm h3 {
+.mainPhotoForm h3 { /* remove it */
   font-weight: 600;
   font-size: 18px;
   font-family: 'Roboto', sans-serif;
   padding-bottom: 8px;
 }
 
-.menuPhotoInfaBookForm .inputField {
-  width: 290px;
-  margin: 15px 0px;
-  padding-right: 8px;
-  background-color:#f0f0f0;
-  display: flex;
-  justify-content: space-between;
+.mainPhotoForm input {
+	width: 280px;
+	margin: 10px 0px;
+	padding: 8px;
+
+	border-style: none;
+	outline: none;
 }
 
-.menuPhotoInfaBookForm input {
-  color:#000000;
-  background-color:#f0f0f0;
-  border-style: none;
-  margin: 0px 0px;
-  padding: 15px 0px;
-  padding-left: 8px;
-  font-weight: 100;
+.mainPhotoForm input[type="date"]{
+	background-color:#f0f0f0;
+	color: #b1b1b1;
+	cursor: pointer;
 }
 
-.menuPhotoInfaBookForm button {
-  width: 100%;
-  background-color: #000000;
-  border-radius: 0px;
-  padding: 15px;
+.mainPhotoForm input[type="date"]:hover {
+	background-color:#d4d4d4;
 }
 
+.mainPhotoForm input[type="submit"]{
+	background-color: #000000;
+	color: #f0f0f0;
+}
+
+/* BODY -> MAIN PHOTO -> TEXT */
+.mainFotoText {
+  max-width: 900px;
+
+  position: absolute;
+  top: 50%;
+  transform: translate(0%, -50%);
+}
+
+.mainFotoText h3 { /* remove it */
+  color: rgb(255, 255, 255);
+  font-weight: 700;
+  font-family: 'Roboto', sans-serif;
+}
+
+.mainFotoText h1 { /* remove it */
+  color: rgb(255, 255, 255);
+  font-size: 62px;
+}
+
+/* BODY -> ROOMS - ABOUT US - COMFORT - BOOKING - CONTACTS - FOOTER - ROOMS  */
 .rooms,
 .aboutUs,
 .comfort,
@@ -449,8 +455,14 @@ footer {
 
 .carousel .roomCard {
   max-width: 340px;
-  padding: 0 10px;
+  padding: 15px 15px;
+  /* margin: 0 10px; */
+
+  /* transition: all 10s; */
+
+  transition: background-color 0.3s ease-in;
 }
+
 
 
 /* .allCards {
@@ -471,9 +483,9 @@ footer {
   /* height: 300px; */
 /* } */
 
-/* .roomCard:hover {
-  background-color: aliceblue;
-} */
+.roomCard:hover {
+  background-color: rgb(231, 231, 231);
+}
 
 /* .roomCard {
   background: linear-gradient(to bottom, rgba(72,76,97,0) 0%, rgba(72,76,97,0.8) 75%);
