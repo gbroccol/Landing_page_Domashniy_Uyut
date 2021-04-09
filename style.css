@@ -447,6 +447,9 @@ footer {
 
 .gallery li {
   display: inline-block;
+
+
+  /* border : 1px solid #E76D13; */
 }
 
 

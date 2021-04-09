@@ -43,7 +43,7 @@ carousel.querySelector('.next').onclick = function () {
 	// последнее передвижение вправо может быть не на 3, а на 2 или 1 элемент
 	// position = Math.max(position, -widthCard * (listElems.length - move));
 
-	position = Math.max(position, -widthCard * (listElems.length - count));
+	position = Math.max(position, -widthCard * (listElems.length - count - 1));
 
 	list.style.marginLeft = position + 'px';
 };
