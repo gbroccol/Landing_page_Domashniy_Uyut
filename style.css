@@ -86,6 +86,7 @@ button:hover {
 .icons {
   display: inline-flex;
   margin: 25px;
+  
 }
 
 .icons .iconsCircle {
@@ -96,9 +97,9 @@ button:hover {
   border-radius: 50%;
 }
 
-/* .icons img {
-  background-color: rgb(255, 255, 255);
-} */
+.icons img {
+  width: 15px;
+}
 
 .icons .telegram :hover {
   background-color: rgb(114, 196, 236);
@@ -288,6 +289,15 @@ header .infa {
 
 /* BODY -> MAIN PHOTO */
 .mainPhoto {
+
+  /* background: url(img/photo01.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; */
+
+
+
     height: 100vh;
     width: 100%;
 
@@ -304,7 +314,7 @@ header .infa {
 
 .centered {				/* change to container */
 	width: 100%;
-	max-width: 1500px;
+	max-width: 1140px;
 }
 
 /* BODY -> MAIN PHOTO -> BOOKING FORM */
@@ -323,8 +333,8 @@ header .infa {
 
 .mainPhotoForm input {
 	width: 280px;
-	margin: 10px 0px;
-	padding: 8px;
+	margin: 7px 0px;
+	padding: 15px;
 
 	border-style: none;
 	outline: none;
@@ -347,22 +357,33 @@ header .infa {
 
 /* BODY -> MAIN PHOTO -> TEXT */
 .mainFotoText {
-  max-width: 900px;
+  max-width: 800px;
 
   position: absolute;
   top: 50%;
   transform: translate(0%, -50%);
+
+  text-shadow: #000000 2px 3px 4px;
 }
 
 .mainFotoText h3 { /* remove it */
   color: rgb(255, 255, 255);
   font-weight: 700;
   font-family: 'Roboto', sans-serif;
+
+  animation-delay: 1s;
+  /* animation-duration: 5s; */
 }
+
+/* .animate__animated.animate__fadeInDown {
+  --animate-duration: 2s;
+} */
 
 .mainFotoText h1 { /* remove it */
   color: rgb(255, 255, 255);
   font-size: 62px;
+
+  /* animation-duration: 1.5s; */
 }
 
 /* BODY -> ROOMS - ABOUT US - COMFORT - BOOKING - CONTACTS - FOOTER - ROOMS  */
@@ -650,21 +671,33 @@ footer {
 
 
 .booking {
+
+  
   background-color: rgb(255, 255, 255);
-  background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(img/book.jpg);
+
+
+
+   background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(img/book.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+
+  /* background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(img/book.jpg);
   background-size: cover;
   background-position-x: center;
-  background-position-y: center;
+  background-position-y: center; */
 
   text-align: center;
 
-  padding: 0 0;
+  padding: 110px 0px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  height: 60vh;
+  /* height: 60vh; */
 
 
   /* position: -webkit-sticky; */
@@ -686,6 +719,14 @@ top: 200px; */
 .booking h3 {
   padding: 0 0 50px 0;
   color: rgb(255, 255, 255);
+}
+
+.mainBookingForm {
+  /* width: 800px; */
+  height: 1500px;
+
+  background-color: rgb(255, 255, 255);
+  opacity: 0.7; /* Полупрозрачный фон */
 }
 
 /* .contacts */
@@ -723,12 +764,12 @@ hr {
   justify-content: center;
 }
 
-.contacts .icons img {
+.contacts .icons .iconsCircle {
   background-color: rgb(255, 198, 145);
 }
 
-.contacts .icons .iconsCircle {
-  background-color: rgb(255, 198, 145);
+.icons .darkIcon :hover {
+  background-color: rgb(255, 166, 83);
 }
 
 
