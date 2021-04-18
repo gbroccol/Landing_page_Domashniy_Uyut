@@ -1,69 +1,84 @@
-
-// var elem = document.roomCard;
-
-// alert(elem.offsetWidth);
-
-
-// alert( parseInt(getComputedStyle(roomCard).width, 10));
-
-
-/* конфигурация */
-// let width = 341; // ширина блока + margin
-
 let widthGallery = parseInt(getComputedStyle(gallery).width, 10);
-
-// alert (getComputedStyle(gallery).width);
-
 let widthCard = parseInt(getComputedStyle(roomCard).width, 10);
-let move = 1; // сдвиг
+widthCard += 30;
 
-let count = widthGallery / widthCard; // видимое количество изображений
-
-// let mainBlock = ;
-
-// var elem = document.body;
-// alert( getComputedStyle(elem).widthCard ); 
+let move = 1;
+let count = widthGallery / widthCard;
 
 let list = carousel.querySelector('.images');
 let listElems = carousel.querySelectorAll('.roomCard');
 
-let position = 0; // положение ленты прокрутки
+let position = 0;
 
-carousel.querySelector('.prev').onclick = function () // сдвиг влево
+carousel.querySelector('.prev').onclick = function ()
 {
 	position += (widthCard) * move;
-	// последнее передвижение влево может быть не на 3, а на 2 или 1 элемент
 	position = Math.min(position, 0)
 	list.style.marginLeft = position + 'px';
 };
 
-carousel.querySelector('.next').onclick = function () {
-	// сдвиг вправо
+carousel.querySelector('.next').onclick = function ()
+{
+	
 	position -= (widthCard) * move;
-	// последнее передвижение вправо может быть не на 3, а на 2 или 1 элемент
-	// position = Math.max(position, -widthCard * (listElems.length - move));
-
 	position = Math.max(position, -widthCard * (listElems.length - count - 1));
-
 	list.style.marginLeft = position + 'px';
 };
 
-// if (count == listElems.length)
+
+
+
+
+
+
+
+// var len = Number(document.querySelectorAll('.winBooking').length);
+
+// alert(len);
+
+// while (true)
 // {
-// 	// arrow 
-// 	/* display: none; */
-// 	document.button.style.display = "none";
+// 	for (var i = 0; i < len; i++)
+// 	{
+		// document.querySelectorAll('.winBooking')[0].onclick = function() { 
+		// 	alert('Бронирование на сайте временно не доступно'); 
+			// modalWindow.style.visibility = "visible";
+			// $('.modalWin_Book_Form').css('visibility','visible');
+		// }
+// 	}
 // }
 
 
+// Booking_Form
+// document.getElementsByClassName("winBooking").onclick = function() { 
+document.querySelectorAll('.winBooking')[0].onclick = function() { 
+    alert('Бронирование на сайте временно не доступно'); 
+	// modalWindow.style.visibility = "visible";
+	// $('.modalWin_Book_Form').css('visibility','visible');
+}
 
-
-
-
-
-
-document.getElementById("myDate").addEventListener("change",(ev)=>{
-	if (ev&&ev.target)
-		if (ev.target.value=="")
-			ev.target.value = ev.target.dataset.default;
-});
+document.querySelectorAll('.winBooking')[1].onclick = function() { 
+    alert('Бронирование на сайте временно не доступно'); 
+	// modalWindow.style.visibility = "visible";
+	// $('.modalWin_Book_Form').css('visibility','visible');
+}
+document.querySelectorAll('.winBooking')[2].onclick = function() { 
+    alert('Бронирование на сайте временно не доступно'); 
+	// modalWindow.style.visibility = "visible";
+	// $('.modalWin_Book_Form').css('visibility','visible');
+}
+document.querySelectorAll('.winBooking')[3].onclick = function() { 
+    alert('Бронирование на сайте временно не доступно'); 
+	// modalWindow.style.visibility = "visible";
+	// $('.modalWin_Book_Form').css('visibility','visible');
+}
+document.querySelectorAll('.winBooking')[4].onclick = function() { 
+    alert('Бронирование на сайте временно не доступно'); 
+	// modalWindow.style.visibility = "visible";
+	// $('.modalWin_Book_Form').css('visibility','visible');
+}
+document.querySelectorAll('.winBooking')[5].onclick = function() { 
+    alert('Бронирование на сайте временно не доступно'); 
+	// modalWindow.style.visibility = "visible";
+	// $('.modalWin_Book_Form').css('visibility','visible');
+}

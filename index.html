@@ -197,7 +197,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<!-- Подключаем Bootstrap CSS -->
-	<link rel="stylesheet" href="lib/css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" href="lib/css/bootstrap.min.css"> -->
 
 
 	<title> Домашний уют </title>
@@ -228,6 +228,8 @@
 
 	<!-- <link rel="stylesheet" href="lib/normalize.css"> -->
 	<link rel="stylesheet" href="style.css">
+
+	<script src="flatsObjects.js"></script>
 
 
 
@@ -291,7 +293,7 @@
 
 			</div>
 			<div>
-				<button>Забронировать</button>
+				<button class="winBooking"> Забронировать </button>
 			</div>
 		</div>
 	</header>
@@ -300,13 +302,13 @@
 
 		<div class="mainPhoto">
 			<div class="centered">
-				<form class="mainPhotoForm">
+				<!-- <form class="mainPhotoForm">
 					<h3> Проверить наличие номеров </h3>
 
 					<input type="date" name="dateFrom" class="" value="" placeholder="Заезд" required> <br>
 					<input type="date" name="dateTo" class="" value="" placeholder="Выезд" required> <br>
 					<input type="submit" value="Показать варианты">
-				</form>
+				</form> -->
 				
 				<div class="mainFotoText ">
 					<h3 class="animate__animated animate__fadeInDown"> "Гости возвращаются к нам и мы этим гордимся, попробуй!"
@@ -320,8 +322,11 @@
 
 
 		<div id="rooms" class="rooms">
-			<div class="myContainer">
-				<h2>Наши квартиры</h2>
+			<div class="cont">
+				<div>
+					<h2>Наши квартиры</h2>
+				</div>
+				
 				<div id="carousel" class="carousel">
 
 					<button class="arrow prev"> ❰ </button>
@@ -359,7 +364,7 @@
 											от 1300р.*
 											<h5> *цена указана до 2 человек </h5>
 										</div>
-										<button>Забронировать</button>
+										<button class="Form-Button winBooking">Забронировать</button>
 									</div>
 								</div>
 
@@ -394,7 +399,7 @@
 											от 1500р.*
 											<h5> *цена указана до 2 человек </h5>
 										</div>
-										<button>Забронировать</button>
+										<button class="winBooking">Забронировать</button>
 									</div>
 								</div>
 
@@ -429,7 +434,7 @@
 											от 1700р.*
 											<h5> *цена указана до 2 человек </h5>
 										</div>
-										<button>Забронировать</button>
+										<button class="winBooking">Забронировать</button>
 									</div>
 								</div>
 
@@ -464,7 +469,7 @@
 											от 1300р.*
 											<h5> *цена указана до 2 человек </h5>
 										</div>
-										<button>Забронировать</button>
+										<button class="winBooking">Забронировать</button>
 									</div>
 								</div>
 
@@ -499,7 +504,7 @@
 											от 1500р.*
 											<h5> *цена указана до 2 человек </h5>
 										</div>
-										<button>Забронировать</button>
+										<button class="winBooking">Забронировать</button>
 									</div>
 								</div>
 
@@ -534,7 +539,7 @@
 											от 1700р.*
 											<h5> *цена указана до 2 человек </h5>
 										</div>
-										<button>Забронировать</button>
+										<button class="winBooking">Забронировать</button>
 									</div>
 								</div>
 
@@ -569,7 +574,7 @@
 											от 1300р.*
 											<h5> *цена указана до 2 человек </h5>
 										</div>
-										<button>Забронировать</button>
+										<button class="winBooking">Забронировать</button>
 									</div>
 								</div>
 
@@ -604,7 +609,7 @@
 											от 1500р.*
 											<h5> *цена указана до 2 человек </h5>
 										</div>
-										<button>Забронировать</button>
+										<button class="winBooking">Забронировать</button>
 									</div>
 								</div>
 
@@ -639,7 +644,7 @@
 											от 1700р.*
 											<h5> *цена указана до 2 человек </h5>
 										</div>
-										<button>Забронировать</button>
+										<button class="winBooking">Забронировать</button>
 									</div>
 								</div>
 
@@ -798,7 +803,7 @@
 
 				<h4> Телеофон: +7 (951) 916-46-03 </h4>
 				<h4> E-mail: t9519164603@mail.ru </h4>
-				<h4> Режим работы: с 7:00 до 23:00* <span> (заселение круглосуточно - уточняйте заранее)</span> </h4>
+				<h4> Режим работы: с 7:00 до 23:00* <span> (заселение круглосуточно - только при бронировании заранее)</span> </h4>
 
 				<div class="icons">
 
@@ -845,6 +850,73 @@
 
 	</footer> -->
 
+	<div id="modalW" class="modalW">
+		<div class="modalWin modalWin_Book_Form">
+			<div class="modalWinBooking" id="modal">
+				<div class="closeModalWin">
+					✕
+				</div>
+				Бронирование на сайте временно не доступно, для бронирования звоните по телефону <a title="Позвонить" href="tel: +7(951)916-46-03"> <u> +7 (951) 916-46-03 </u> </a> <br>
+				<a title="Позвонить" href="tel: +7(951)916-46-03"> <button> Позвонить </button> </a>
+			</div>
+		</div>
+	</div>
+	
+	 <!-- <script>
+	  var modal = document.querySelector('.modal_win');
+	  var overflow = document.createElement('div');
+	  function openWin() {
+			  overflow.className = "overflow_for_modal";
+			  document.body.appendChild(overflow);
+			  var height = modal.offsetHeight;
+			  modal.style.marginTop = - height / 2 + "px";
+			  modal.style.top = "50%";
+	  }
+	  if (!Element.prototype.remove) {
+			  Element.prototype.remove = function remove() {
+					  if (this.parentNode) {
+							  this.parentNode.removeChild(this);
+					  }
+			  };
+	  }
+	  overflow.onclick = function () {
+			  modal.style.top = "-100%";
+			  overflow.remove();
+	  }
+	  </script> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -856,6 +928,8 @@
 
 	<!-- <script src="js/headerScroll.js"></script> -->
 	<script src="index.js"></script>
+
+	
 	<script src="carouselRoomCards.js"></script>
 
 </body>

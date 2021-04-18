@@ -68,11 +68,16 @@ button {
   color: rgb(255, 255, 255);
   font-weight: bold;
   transition: border-radius 0.4s ease-in;
+  font-size: 14px;
 }
 
 button:hover {
   background-color: #df520c;
   border-radius: 30px;
+}
+
+.Form-Button {
+  /* float: right; */
 }
 
 /* .container {
@@ -91,7 +96,7 @@ button:hover {
 
 .icons .iconsCircle {
   margin: 5px;
-  padding: 5px 10px 5px 10px;
+  padding: 10px 10px 5px 10px;
 
   background-color: rgb(255, 255, 255);
   border-radius: 50%;
@@ -415,20 +420,31 @@ footer {
   text-align: center;
 }
 
+.cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .carousel {
-  width: 100%;
+  width: 1480px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   padding: 10px 60px;
+
+  position: relative;
 }
 
 .arrow {
   position: absolute;
-  top: 50%;
+  /* top: 50%; */
   font-size: 24px;
-  line-height: 24px;
+  /* line-height: 24px; */
   color: rgb(0, 0, 0);
-  background-color: #ccc;
-  display: block;
-  width: 35px;
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 .arrow:focus {
@@ -452,7 +468,7 @@ footer {
 }
 
 .gallery {
-  width: 100%;
+  width: 1480px;
   overflow: hidden;
 }
 
@@ -478,7 +494,8 @@ footer {
 
 
 .carousel .roomCard {
-  max-width: 340px;
+  width: 340px;
+  height: 560px;
   padding: 15px 15px;
   /* margin: 0 10px; */
 
@@ -778,3 +795,46 @@ hr {
     z-index: 10;
 } */
 
+.modalWin{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: fixed; /* or absolute */
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+
+  z-index: 1000;
+}
+
+.modalWinBooking {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: rgb(255, 255, 255);
+
+  padding: 20px;
+
+  max-width: 500px;
+  text-align: center;
+}
+
+.closeModalWin {
+  color: #575757;
+  font-size: 25px;
+
+  position: absolute;
+  top: 0;
+  right: 10px;
+}
+
+.modalWin_Book_Form {
+  visibility: hidden;
+  /* visibility: visible; */
+}
