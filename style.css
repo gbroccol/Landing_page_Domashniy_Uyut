@@ -37,7 +37,7 @@ h1 {
 
 h2 {
   font-weight: bold;
-  font-size: 40px;
+  font-size: 2em;
 }
 
 h3 {
@@ -69,6 +69,7 @@ button {
   font-weight: bold;
   transition: border-radius 0.4s ease-in;
   font-size: 14px;
+  cursor: pointer;
 }
 
 button:hover {
@@ -76,22 +77,10 @@ button:hover {
   border-radius: 30px;
 }
 
-.Form-Button {
-  /* float: right; */
-}
-
-/* .container {
-  width: 100%;
-  max-width: 1024px;
-  padding: 0 15px;
-  margin: 0 auto;
-} */
-
 /* icons */
 .icons {
   display: inline-flex;
   margin: 25px;
-  
 }
 
 .icons .iconsCircle {
@@ -118,18 +107,32 @@ button:hover {
   background-color: rgb(37, 211, 102);
 }
 
-.myContainer {
-  margin-right: auto;
-  margin-left: auto;
-  /* max-width: 1800px; */
+
+
+
+
+/* .container {
+  width: 100%;
+  max-width: 1024px;
+  padding: 0 15px;
+  margin: 0 auto;
+} */
+
+.row {
+  display: grid;
+  grid-template-columns: 50% 50%;
 }
 
-/* @media (min-width: 1200px) {
-  .myContainer {
-    max-width: 1140px;   
-  }
+.container {
+  margin: auto;
+  max-width: 1024px;
+}
 
-} */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1240px;   
+  }
+}
 
 /* .containerCarousel {
   max-width: 1400px;
@@ -307,7 +310,7 @@ header .infa {
     width: 100%;
 
     background-color: rgb(255, 255, 255);
-    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(img/photo01.jpg);
+    background-image: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(http://domashniy-uyut-kstovo.ru/wp-content/uploads/2021/04/photo01.jpeg);
     background-size: cover;
     background-position-x: center;
     background-position-y: center;
@@ -371,6 +374,16 @@ header .infa {
   text-shadow: #000000 2px 3px 4px;
 }
 
+@media (max-width: 1310px) {
+  .mainFotoText {
+    width: 90%;
+    /* max-width: 100%; */
+    padding-left: 20px;
+  }
+}
+
+
+
 .mainFotoText h3 { /* remove it */
   color: rgb(255, 255, 255);
   font-weight: 700;
@@ -387,9 +400,20 @@ header .infa {
 .mainFotoText h1 { /* remove it */
   color: rgb(255, 255, 255);
   font-size: 62px;
+  padding-top: 15px;
 
   /* animation-duration: 1.5s; */
 }
+
+@media (max-width: 1200px) {
+  .mainFotoText h1 {
+    font-size: 45px;
+  }
+}
+
+
+
+
 
 /* BODY -> ROOMS - ABOUT US - COMFORT - BOOKING - CONTACTS - FOOTER - ROOMS  */
 .rooms,
@@ -438,6 +462,43 @@ footer {
   position: relative;
 }
 
+@media (max-width: 500px) {
+  .carousel {
+    padding: 0;
+  }
+  
+}
+
+@media (max-width: 1640px) {
+  .carousel {
+    max-width: 1110px;   
+  }
+}
+
+@media (max-width: 1240px) {
+  .carousel {
+    max-width: 740px;   
+  }
+}
+
+@media (max-width: 860px) {
+  .carousel {
+    max-width: 370px;   
+  }
+} 
+
+/* @media (max-width: 1440px) {
+  .container {
+    max-width: 1110px;   
+  }
+}  */
+
+
+
+
+
+
+
 .arrow {
   position: absolute;
   /* top: 50%; */
@@ -467,6 +528,15 @@ footer {
   padding: 10px 10px;
 }
 
+@media (max-width: 500px) {
+  .prev {
+    display: none;
+  }
+  .next {
+    display: none;
+  }
+}
+
 .gallery {
   width: 1480px;
   overflow: hidden;
@@ -485,9 +555,31 @@ footer {
 .gallery li {
   display: inline-block;
 
+  /* display: flex; */
 
   /* border : 1px solid #E76D13; */
 }
+
+@media (max-width: 500px) {
+
+  .gallery li {
+    display: inline-block;
+  
+    display: flex;
+  
+    /* border : 1px solid #E76D13; */
+  }
+
+  /* .gallery li { */
+    /* display: flex; */
+  /* } */
+  .roomCard {
+    background-color: rgb(231, 231, 231);
+    margin: 10px 0;
+  }
+}
+
+
 
 
 
@@ -495,7 +587,7 @@ footer {
 
 .carousel .roomCard {
   width: 340px;
-  height: 560px;
+  /* height: 560px; */
   padding: 15px 15px;
   /* margin: 0 10px; */
 
@@ -528,19 +620,21 @@ footer {
   background-color: rgb(231, 231, 231);
 }
 
-/* .roomCard {
-  background: linear-gradient(to bottom, rgba(72,76,97,0) 0%, rgba(72,76,97,0.8) 75%);
-  content: '';
-  opacity: 0;
-  -webkit-transform: translate3d(0,50%,0);
-  transform: translate3d(0,50%,0);
-} */
+@media (max-width: 500px) {
+
+  /* .gallery li { */
+    /* display: flex; */
+  /* } */
+  /* .roomCard {
+    background-color: rgb(231, 231, 231);
+    margin: 10px 0;
+  } */
+}
 
 .roomPhoto {
   position: relative;
   height: 230px;
   overflow: hidden;
-
 }
 
 .roomPhoto h1 {
@@ -554,7 +648,7 @@ footer {
 }
 
 .roomPhoto img {
-  height: 100%;
+  width: 100%;
 }
 
 .roomInfa{
@@ -623,6 +717,8 @@ footer {
   align-content: center;
 }
 
+
+
 .aboutUsText .part1 {
   width: 25%;
 }
@@ -644,11 +740,27 @@ footer {
   align-self: center;
 }
 
+@media (max-width: 750px) {
+  .part1 {
+    display: none;
+  }
+
+  .aboutUsText .part2 {
+    width: 80%;
+  }
+}
+
 .part2 h4 {
   margin: 25px 0;
 }
 
 /* comfort */
+
+@media (max-width: 960px) {
+  .comfort {
+    display: none;   
+  }
+}
 
 .comfort .row {
   margin: 0 110px;
@@ -665,7 +777,7 @@ footer {
 
 .item {
   display: flex;
-  padding-top: 25px;
+  padding: 10px 5px 10px 5px;
 }
 
 .item img {
@@ -684,9 +796,6 @@ footer {
   font-size: 12px;
 }
 
-
-
-
 .booking {
 
   
@@ -694,7 +803,7 @@ footer {
 
 
 
-   background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(img/book.jpg) no-repeat center center fixed; 
+   background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(http://domashniy-uyut-kstovo.ru/wp-content/uploads/2021/04/book.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -724,8 +833,15 @@ top: 200px; */
 /* z-index: 1; */
 
 }
+
 .booking .container {
   width: 700px;
+}
+
+@media (min-width: 300px) {
+  .booking .container {
+    width: 80%;
+  }
 }
 
 .booking H2 {
@@ -819,22 +935,157 @@ hr {
 
   background-color: rgb(255, 255, 255);
 
-  padding: 20px;
+  padding: 50px 30px 30px 30px;
 
   max-width: 500px;
   text-align: center;
+  margin: 20px;
 }
 
-.closeModalWin {
+.closeModalWin h2 {
   color: #575757;
-  font-size: 25px;
+  font-size: 35px;
 
   position: absolute;
-  top: 0;
+  top: 5px;
   right: 10px;
+
+  cursor: pointer;
 }
 
-.modalWin_Book_Form {
+.ModalWin_BookForm {
+  z-index: -1;
+  /* display: none; */
+}
+
+/* .ModalWin_BookForm {
+  z-index: -1;
+  display: flex;
+} */
+
+.ModalWin_BookForm_Visible {
+  z-index: 1000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#menu__toggle {
+  opacity: 0;
+}
+
+#menu__toggle:checked ~ .menu__btn > span {
+  transform: rotate(45deg);
+}
+#menu__toggle:checked ~ .menu__btn > span::before {
+  top: 0;
+  transform: rotate(0);
+}
+#menu__toggle:checked ~ .menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+#menu__toggle:checked ~ .menu__box {
+  visibility: visible;
+  left: 0;
+}
+
+.menu__btn {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 25px;
+  right: 25px;
+
+  width: 26px;
+  height: 26px;
+
+  cursor: pointer;
+  z-index: 1;
+
+}
+.hamburger-menu {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .hamburger-menu {
+    display: block;
+  }
+}
+
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  display: block;
+  position: absolute;
+
+  width: 100%;
+  height: 3px;
+
+  background-color: #f0f0f0;
+
+  transition-duration: .25s;
+}
+.menu__btn > span::before {
+  content: '';
+  top: -8px;
+}
+.menu__btn > span::after {
+  content: '';
+  top: 8px;
+}
+
+.menu__box {
+  display: block;
+  position: fixed;
   visibility: hidden;
-  /* visibility: visible; */
+  top: 0;
+  left: -100%;
+
+  width: 60%;
+  height: 100%;
+
+  margin: 0;
+  padding: 80px 0;
+
+  list-style: none;
+
+  background-color: rgb(231, 231, 231);
+  box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+
+  transition-duration: .25s;
+}
+
+.menu__item {
+  display: block;
+  padding: 12px 24px;
+
+  color: #333;
+
+  /* font-family: 'Roboto', sans-serif; */
+  font-size: 20px;
+  font-weight: 500;
+
+  text-decoration: none;
+
+  transition-duration: .25s;
+  font-family: 'Open Sans', sans-serif;
+}
+.menu__item:hover {
+  background-color: #CFD8DC;
+}
+
+.menu__box .menu__item {
+  color: #000000;
+  /* font-weight: 100; */
 }

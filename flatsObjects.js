@@ -1,6 +1,6 @@
-
 // 40 лет Октября
-var flat01 = { 
+var flat01 = {
+	photo: "",
 	type: "Однокомнатная",
 	size: 1,
 	min_people: 1,
@@ -12,6 +12,7 @@ var flat01 = {
 
 // Двухкомнатная с сауной
 var flat02 = { 
+	photo: "",
 	type: "Двухкомнатная с сауной",
 	size: 1,
 	min_people: 1,
@@ -22,26 +23,55 @@ var flat02 = {
 	start_price: 1500
 }
 
-// 
-// var flat01 = { 
-// 	type: "",
-// 	size: ,
-// 	min_people: 1,
-// 	max_people: ,
-// 	features: [],
-// 	infrastructure: [],
-// 	start_price:
-// }
+// 40 лет Октября
+var flat03 = {
+	photo: "",
+	type: "Однокомнатная",
+	size: 1,
+	min_people: 1,
+	max_people: 4,
+	features: ["Большая двуспальная кровать", "Вид на город", "Быстрый интернет", "Парковка"],
+	infrastructure: ["аквапарк Атолл", "площадь Ленина", "площадь Мира", "ресторан «Додо Пицца»"],
+	start_price: 1300
+}
 
-// // 
-// var flat01 = { 
-// 	type: "",
-// 	size: ,
-// 	min_people: 1,
-// 	max_people: ,
-// 	features: [],
-// 	infrastructure: [],
-// 	start_price:
-// }
+// Двухкомнатная с сауной
+var flat04 = { 
+	photo: "",
+	type: "Двухкомнатная с сауной",
+	size: 1,
+	min_people: 1,
+	max_people: 4,
+	features: ["Услуга «Завтрак в номер»", "Сад с беседкой и мангалом", "Зоны для курения",
+					"Проведение праздников", "Парковка"],
+	infrastructure: ["продуктовые магазины", "автобусная остановка"],
+	start_price: 1500
+}
 
+// 40 лет Октября
+var flat05 = {
+	photo: "",
+	type: "Однокомнатная",
+	size: 1,
+	min_people: 1,
+	max_people: 4,
+	features: ["Большая двуспальная кровать", "Вид на город", "Быстрый интернет", "Парковка"],
+	infrastructure: ["аквапарк Атолл", "площадь Ленина", "площадь Мира", "ресторан «Додо Пицца»"],
+	start_price: 1300
+}
+
+// Двухкомнатная с сауной
+var flat06 = { 
+	photo: "",
+	type: "Двухкомнатная с сауной",
+	size: 1,
+	min_people: 1,
+	max_people: 4,
+	features: ["Услуга «Завтрак в номер»", "Сад с беседкой и мангалом", "Зоны для курения",
+					"Проведение праздников", "Парковка"],
+	infrastructure: ["продуктовые магазины", "автобусная остановка"],
+	start_price: 1500
+}
+
+var flats = [flat01, flat02, flat03, flat04, flat05, flat06];
 

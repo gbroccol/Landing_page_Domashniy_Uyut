@@ -215,34 +215,18 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
 
-
-	
-
-
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-
-
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
 	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
-
 
 	<!-- <link rel="stylesheet" href="lib/normalize.css"> -->
 	<link rel="stylesheet" href="style.css">
 
 	<script src="flatsObjects.js"></script>
 
-
-
 </head>
 
 <body>
-
-
-	<!-- <script>
-		document.body.style.background = 'red';
-	</script> -->
-
-
 	<header>
 		<nav>
 			<li> <a href="#aboutHotel">Об отеле</a> </li>
@@ -263,39 +247,66 @@
 
 			<div class="icons">
 
-				<a href="#rooms">
+				<!-- <a href="#rooms">
 					<div class="telegram">
 						<div class="iconsCircle">
-							<!-- change url -->
 							<img src="img/telegram.svg" title="mainphoto">
 						</div>
 					</div>
-				</a>
+				</a> -->
 
-				<a href="#rooms">
+				<a href="https://vk.com/domashniy_uyut_kstovo" target="_blank">
 					<div class="vk">
 						<div class="iconsCircle">
-							<!-- change url -->
 							<img src="img/vk.svg" title="mainphoto">
 						</div>
 					</div>
 				</a>
 
 
-				<a href="#rooms">
+				<!-- <a href="#rooms">
 					<div class="whatsapp">
 						<div class="iconsCircle">
-							<!-- change url -->
 							<img src="img/whatsapp.svg" title="mainphoto">
 						</div>
 					</div>
-				</a>
+				</a> -->
 
 			</div>
 			<div>
-				<button class="winBooking"> Забронировать </button>
+				<button class="Open_Modal_Window_Button"> Забронировать </button>
 			</div>
 		</div>
+
+
+		<div class="hamburger-menu">
+			<input id="menu__toggle" type="checkbox" />
+			<label class="menu__btn" for="menu__toggle">
+				<span></span>
+			</label>
+
+			<ul class="menu__box">
+				<li><a class="menu__item" href="#aboutHotel">Об отеле</a></li>
+				<li><a class="menu__item" href="#rooms">Квартиры</a></li>
+				<li><a class="menu__item" href="#contacts">Контакты</a></li>
+
+				<!-- <li class="icons">
+					<a class="menu__icon whatsapp" href="">
+						<div class="iconsCircle">
+							<img src="img/telegram.svg" title="mainphoto">
+						</div>
+						<div class="iconsCircle">
+							<img src="img/vk.svg" title="mainphoto">
+						</div>
+						<div class="iconsCircle">
+							<img src="img/whatsapp.svg" title="mainphoto">
+						</div>
+					</a>
+				</li> -->
+			</ul>
+		</div>
+
+
 	</header>
 
 	<main>
@@ -309,9 +320,10 @@
 					<input type="date" name="dateTo" class="" value="" placeholder="Выезд" required> <br>
 					<input type="submit" value="Показать варианты">
 				</form> -->
-				
+
 				<div class="mainFotoText ">
-					<h3 class="animate__animated animate__fadeInDown"> "Гости возвращаются к нам и мы этим гордимся, попробуй!"
+					<h3 class="animate__animated animate__fadeInDown"> "Гости возвращаются к нам и мы этим гордимся,
+						попробуй!"
 						<br> P.S. Павел и Марина
 					</h3>
 					<h1 class="animate__animated animate__fadeInLeftBig"> Квартиры посуточно в Кстово </h1>
@@ -323,10 +335,23 @@
 
 		<div id="rooms" class="rooms">
 			<div class="cont">
-				<div>
+				<div class="container">
 					<h2>Наши квартиры</h2>
+
+					<p> Подробнее (удобства и услуги в каждом номере)
+
+					<!-- Апартаменты «Домашний Уют» с общими лаунджем и кухней расположены в городе Кстово, в 1,5 км от автобусного вокзала Кстово. К услугам гостей бесплатный Wi-Fi. Осуществляется доставка еды и напитков в апартаменты. Из апартаментов с балконом открывается вид на город. -->
+					
+					<!-- Апартаменты с 2 спальнями оснащены стиральной машиной и телевизором с плоским экраном и кабельными каналами. В распоряжении гостей оборудованная кухня с микроволновой печью и холодильником, а также 1 ванная комната с душем. -->
+					
+					<!-- При апартаментах работает пункт проката велосипедов и лыжного снаряжения. Поблизости можно совершить велосипедные прогулки и заняться лыжным спортом. -->
+					
+					<!-- Расстояние от апартаментов «Домашний Уют» до международного аэропорта Стригино составляет 26 км. За дополнительную плату для гостей организуют трансфер от/до аэропорта. -->
+					
+					<!-- Мы говорим на вашем языке! -->
+
 				</div>
-				
+
 				<div id="carousel" class="carousel">
 
 					<button class="arrow prev"> ❰ </button>
@@ -334,317 +359,371 @@
 						<ul class="images">
 
 							<li>
+								<!-- 40 Лет Октября -->
 								<div id="roomCard" class="roomCard">
-									<div class="roomPhoto">
-										<img src="img/room0_00.jpg">
+									<div class="roomPhoto roomPhoto00">
+										<img src="http://domashniy-uyut-kstovo.ru/wp-content/uploads/2021/04/room0_00.jpg">
 										<h1> Однокомнатная </h1>
 									</div>
 									<div class="roomInfa">
 
 										<div class="roomSize">
-											<p> Размер квартиры - 32м²
-											<h5>1-4 человека</h5>
+											<p> Размер квартиры - 31м²
+											<h5>1-3 человека</h5>
 										</div>
 
 										<p> О квартире:
 										<ul>
-											<li> Большая двуспальная кровать </li>
-											<li> Вид на город </li>
-											<li> Быстрый интернет </li>
-											<li> Парковка </li>
+											<!-- <li>5 этаж</li> -->
+											<li>В центре города</li>
+											<!-- <li>Отчетные документы</li> -->
+											<!-- <li>Большая двуспальная кровать </li> -->
+											<!-- <li> Кухня </li>									 -->
+											<li> Балкон</li>
+											<!-- <li> Вид на город </li> -->
+											<!-- <li> Быстрый интернет </li> -->
+											
+											<!-- <li> Частная парковка </li> -->
+											<li> Общественная парковка </li>
+
+											<li> Номера для некурящих</li>
+											<li> Можно с питомцами (за дополнительную плату)</li>
 										</ul>
 
 										<p>Инфраструктура рядом:
 										<ul>
-											<li>аквапарк Атолл, площадь Ленина, площадь Мира, ресторан «Додо Пицца»
+											<li>
+												аквапарк Атолл, 
+												площадь Ленина, 
+												Mac'Donalds,
+												площадь Мира, 
+												ресторан «Додо Пицца»,
+												ТЦ "Пирамида",
+												Супермаркет SPAR (круглосуточно)
 											</li>
 										</ul>
 
 										<div class="price">
-											от 1300р.*
-											<h5> *цена указана до 2 человек </h5>
-										</div>
-										<button class="Form-Button winBooking">Забронировать</button>
-									</div>
-								</div>
-
-							<li>
-								<div class="roomCard">
-									<div class="roomPhoto">
-										<img src="img/room1_00.jpg">
-										<h1> Двухкомнатная с сауной </h1>
-									</div>
-									<div class="roomInfa">
-
-										<div class="roomSize">
-											<p> Размер квартиры - 45м²
-											<h5>1-4 человека</h5>
-										</div>
-
-										<p> О квартире:
-										<ul>
-											<li> Услуга "Завтрак в номер" </li>
-											<li> Сад с беседкой и мангалом </li>
-											<li> Зоны для курения </li>
-											<li> Проведение праздников </li>
-											<li> Парковка </li>
-										</ul>
-
-										<p>Инфраструктура рядом:
-										<ul>
-											<li> продуктовые магазины, автобусная остановка </li>
-										</ul>
-
-										<div class="price">
 											от 1500р.*
-											<h5> *цена указана до 2 человек </h5>
+											<h5> *цена указана до 2 человек (1 сутки) </h5>
 										</div>
-										<button class="winBooking">Забронировать</button>
+										<button class="Open_Modal_Window_Button">Забронировать</button>
 									</div>
 								</div>
 
+								<li>
+									<!-- Двухкомнатная с сауной -->
+									<div class="roomCard">
+										<div class="roomPhoto roomPhoto01">
+											<img src="http://domashniy-uyut-kstovo.ru/wp-content/uploads/2021/04/room1_00.jpg">
+											<h1> Двухкомнатная </h1>
+										</div>
+										<div class="roomInfa">
+	
+											<div class="roomSize">
+												<p> Размер квартиры - 53м²
+												<h5>1-5 человек</h5>
+											</div>
+	
+											<p> О квартире:
+												<ul>
+													<!-- <li> 1 этаж</li> -->
+													
+													<!-- <li>В центре города</li> -->
+													<li> Современный ремонт </li>
+													<!-- <li> Отчетные документы </li> -->
+													
+													<li> Услуга "Завтрак в номер" </li>
+													<li> Сад с беседкой и мангалом </li>
+													<li> Зоны для курения </li>
+													
+													
+													<!-- <li>Большая двуспальная кровать </li> -->
+													<!-- <li> Кухня </li>									 -->
+													<!-- <li> Балкон</li> -->
+													<!-- <li> Вид на город </li> -->
+													<!-- <li> Быстрый интернет </li> -->
+
+													<li> Частная парковка </li>
+													<!-- <li> Общественная парковка </li>  -->
+
+													<!-- <li> Номера для некурящих</li> -->
+													<li> Сауна (за дополнительную плату)</li>
+													<li> Можно с питомцами (за дополнительную плату)</li>
+													<!-- <li>Размещение домашних животных допускается по предварительному запросу. Данная услуга может быть платной.</li> -->
+												</ul>
+		
+												<p>Инфраструктура рядом:
+												<ul>
+													<li>
+														<!-- аквапарк Атолл, 
+														площадь Ленина, 
+														площадь Мира, 
+														ресторан «Додо Пицца»,
+														ТЦ "Пирамида",
+														Супермаркет SPAR (круглосуточно), -->
+														продуктовые магазины,
+														автобусная остановка
+													</li>
+												</ul>
+										
+	
+											<div class="price">
+												от 2000р.*
+												<h5> *цена указана до 2 человек (1 сутки)</h5>
+											</div>
+											<button class="Open_Modal_Window_Button">Забронировать</button>
+										</div>
+									</div>
+
 							<li>
+								<!-- Наташа трешка -->
 								<div class="roomCard">
-									<div class="roomPhoto">
-										<img src="img/room2_00.png">
+									<div class="roomPhoto roomPhoto03">
+										<img src="http://domashniy-uyut-kstovo.ru/wp-content/uploads/2021/04/room3_00.jpg">
 										<h1> Трехкомнатная </h1>
 									</div>
 									<div class="roomInfa">
 
 										<div class="roomSize">
 											<p> Размер квартиры - 60м²
-											<h5>1-4 человека</h5>
+											<h5>1-6 человек</h5>
 										</div>
 
 										<p> О квартире:
-										<ul>
-											<li> Большая двуспальная кровать </li>
-											<li> Вид на город </li>
-											<li> Быстрый интернет </li>
-											<li> Услуга "Завтрак в номер" </li>
-											<li> Парковка </li>
-										</ul>
+											<ul>
+												<!-- <li> 1 этаж</li> -->
 
-										<p>Инфраструктура рядом:
-										<ul>
-											<li> продуктовые магазины, автобусная остановка </li>
-										</ul>
+												<!-- <li> Современный ремонт </li> -->
+												
+												<!-- <li>В центре города</li> -->
+												<li>Отчетные документы</li>
+												
+												<!-- <li> Услуга "Завтрак в номер" </li> -->
+												<!-- <li> Сад с беседкой и мангалом </li> -->
+
+												<!-- <li>Большая двуспальная кровать </li> -->
+												<!-- <li> Кухня </li>									 -->
+												<!-- <li> Балкон</li> -->
+												<li> Вид на город </li>
+												<li> Быстрый интернет </li>
+
+												<!-- <li> Частная парковка </li> -->
+												<li> Общественная парковка </li> 
+												
+												<!-- <li> Зоны для курения </li> -->
+												<li> Номера для некурящих</li>
+
+												<!-- <li> Сауна (за дополнительную плату)</li> -->
+												<!-- <li> Размещение домашних животных допускается по предварительному запросу. Данная услуга может быть платной. </li> -->
+											</ul>
+	
+											<p>Инфраструктура:
+											<ul>
+												<li>
+													
+													<!-- площадь Ленина, 
+													аквапарк Атолл, 
+													Mac'Donalds,
+													ТЦ "Пирамида",
+													Супермаркет SPAR (круглосуточно), -->
+
+													<!-- автостанция Кстово, -->
+													<!-- площадь Мира,  -->
+													<!-- ресторан «Додо Пицца», -->													
+
+													<!-- супермаркет SPAR, -->
+													
+													Дворец Культуры "Нефтехимиков",
+													академия "САМБО",
+													парковая зона,
+
+													<!-- музей "Быта Народов Нижегородского Поволжья" -->
+
+													ТРЦ "Восторг",
+													кинотеатр "Империя грез",
+													
+													продуктовые магазины,
+													<!-- автобусная остановка -->
+
+													детский парк,
+													театр кукол
+												</li>
+											</ul>
 
 										<div class="price">
-											от 1700р.*
-											<h5> *цена указана до 2 человек </h5>
+											от 2100р.*
+											<h5> *цена указана до 3 человек (1 сутки) </h5>
 										</div>
-										<button class="winBooking">Забронировать</button>
+										<button class="Open_Modal_Window_Button">Забронировать</button>
 									</div>
 								</div>
 
+								<li>
+									<!-- Новая трешка -->
+									<div class="roomCard">
+										<div class="roomPhoto roomPhoto02">
+											<img src="http://domashniy-uyut-kstovo.ru/wp-content/uploads/2021/04/room2_00.jpg">
+											<h1> Трехкомнатная </h1>
+										</div>
+										<div class="roomInfa">
+	
+											<div class="roomSize">
+												<p> Размер квартиры - 51м²
+												<h5>1-6 человек</h5>
+											</div>
+	
+	
+											<p> О квартире:
+												<ul>
+													<!-- <li> 1 этаж</li> -->
+	
+													<li> Современный ремонт </li>
+													
+													<li>В центре города</li>
+													<!-- <li>Отчетные документы</li> -->
+													
+													<!-- <li> Услуга "Завтрак в номер" </li> -->
+													<!-- <li> Сад с беседкой и мангалом </li> -->
+	
+													<!-- <li>Большая двуспальная кровать </li> -->
+													<!-- <li> Кухня </li>									 -->
+													<!-- <li> Балкон</li> -->
+													<!-- <li> Вид на город </li> -->
+													<!-- <li> Быстрый интернет </li> -->
+	
+													<!-- <li> Частная парковка </li> -->
+													<li> Общественная парковка </li> 
+													
+													<!-- <li> Зоны для курения </li> -->
+													<li> Номера для некурящих</li>
+	
+	
+													<!-- <li> Сауна (за дополнительную плату)</li> -->
+													<!-- <li> Размещение домашних животных допускается по предварительному запросу. Данная услуга может быть платной. </li> -->
+												</ul>
+		
+												<p>Инфраструктура:
+												<ul>
+													<li>
+														
+														<!-- площадь Ленина, 
+														аквапарк Атолл, 
+														Mac'Donalds,
+														ТЦ "Пирамида",
+														Супермаркет SPAR (круглосуточно), -->
+	
+	
+														<!-- автостанция Кстово, -->
+														площадь Мира, 
+														<!-- ресторан «Додо Пицца», -->
+														
+	
+														супермаркет SPAR,
+														
+														академия "САМБО",
+														парковая зона,
+	
+														ТРЦ "Восторг",
+														кинотеатр "Империя грез",
+	
+														Дворец Культуры "Нефтехимиков",
+														музей "Быта Народов Нижегородского Поволжья"
+														
+														<!-- продуктовые магазины, -->
+														<!-- автобусная остановка -->
+													</li>
+												</ul>
+	
+											<div class="price">
+												от 2700р.*
+												<h5> *цена указана до 3 человек (1 сутки) </h5>
+											</div>
+											<button class="Open_Modal_Window_Button">Забронировать</button>
+										</div>
+									</div>
+
 							<li>
+								<!-- Трехкомнатная в доме -->
 								<div class="roomCard">
-									<div class="roomPhoto">
-										<img src="img/room0_00.jpg">
-										<h1> Однокомнатная </h1>
+									<div class="roomPhoto roomPhoto04">
+										<img src="http://domashniy-uyut-kstovo.ru/wp-content/uploads/2021/04/room4_00.jpg">
+										<h1> Трехкомнатная </h1>
 									</div>
 									<div class="roomInfa">
 
 										<div class="roomSize">
-											<p> Размер квартиры - 32м²
-											<h5>1-4 человека</h5>
+											<p> Размер квартиры - 71м²
+											<h5>1-6 человек</h5>
 										</div>
 
 										<p> О квартире:
-										<ul>
-											<li> Большая двуспальная кровать </li>
-											<li> Вид на город </li>
-											<li> Быстрый интернет </li>
-											<li> Парковка </li>
-										</ul>
+											<ul>
+												<!-- <li> 1 этаж</li> -->
 
-										<p>Инфраструктура рядом:
-										<ul>
-											<li>аквапарк Атолл, площадь Ленина, площадь Мира, ресторан «Додо Пицца»
-											</li>
-										</ul>
+												<!-- <li> Современный ремонт </li> -->
+												
+												<!-- <li>В центре города</li> -->
+												<li>Отчетные документы</li>
+												
+												<li> Услуга "Завтрак в номер" </li>
+												<li> Сад с беседкой и мангалом </li>
 
-										<div class="price">
-											от 1300р.*
-											<h5> *цена указана до 2 человек </h5>
-										</div>
-										<button class="winBooking">Забронировать</button>
-									</div>
-								</div>
+												<!-- <li>Большая двуспальная кровать </li> -->
+												<!-- <li> Кухня </li>									 -->
+												<!-- <li> Балкон</li> -->
+												<!-- <li> Вид на город </li> -->
+												<li> Быстрый интернет </li>
 
-							<li>
-								<div class="roomCard">
-									<div class="roomPhoto">
-										<img src="img/room1_00.jpg">
-										<h1> Однокомнатная </h1>
-									</div>
-									<div class="roomInfa">
+												<li> Частная парковка </li>
+												<!-- <li> Общественная парковка </li>  -->
+												
+												<li> Зоны для курения </li>
+												<!-- <li> Номера для некурящих</li> -->
 
-										<div class="roomSize">
-											<p> Размер квартиры - 45м²
-											<h5>1-4 человека</h5>
-										</div>
+												<!-- <li> Сауна (за дополнительную плату)</li> -->
+												<li> Можно с питомцами (за дополнительную плату)</li>
+												<!-- <li> Размещение домашних животных допускается по предварительному запросу. Данная услуга может быть платной. </li> -->
+											</ul>
+	
+											<p>Инфраструктура:
+											<ul>
+												<li>
+													
+													<!-- площадь Ленина, 
+													аквапарк Атолл, 
+													Mac'Donalds,
+													ТЦ "Пирамида",
+													Супермаркет SPAR (круглосуточно), -->
 
-										<p> О квартире:
-										<ul>
-											<li> Услуга "Завтрак в номер" </li>
-											<li> Сад с беседкой и мангалом </li>
-											<li> Зоны для курения </li>
-											<li> Проведение праздников </li>
-											<li> Парковка </li>
-										</ul>
+													<!-- автостанция Кстово, -->
+													<!-- площадь Мира,  -->
+													<!-- ресторан «Додо Пицца», -->													
 
-										<p>Инфраструктура рядом:
-										<ul>
-											<li> продуктовые магазины, автобусная остановка </li>
-										</ul>
+													<!-- супермаркет SPAR, -->
+													
+													<!-- Дворец Культуры "Нефтехимиков",
+													академия "САМБО",
+													парковая зона, -->
 
-										<div class="price">
-											от 1500р.*
-											<h5> *цена указана до 2 человек </h5>
-										</div>
-										<button class="winBooking">Забронировать</button>
-									</div>
-								</div>
+													<!-- музей "Быта Народов Нижегородского Поволжья" -->
 
-							<li>
-								<div class="roomCard">
-									<div class="roomPhoto">
-										<img src="img/room2_00.png">
-										<h1> Однокомнатная </h1>
-									</div>
-									<div class="roomInfa">
+													<!-- ТРЦ "Восторг",
+													кинотеатр "Империя грез", -->
+													
+													продуктовые магазины,
+													автобусная остановка
 
-										<div class="roomSize">
-											<p> Размер квартиры - 60м²
-											<h5>1-4 человека</h5>
-										</div>
-
-										<p> О квартире:
-										<ul>
-											<li> Большая двуспальная кровать </li>
-											<li> Вид на город </li>
-											<li> Быстрый интернет </li>
-											<li> Услуга "Завтрак в номер" </li>
-											<li> Парковка </li>
-										</ul>
-
-										<p>Инфраструктура рядом:
-										<ul>
-											<li> продуктовые магазины, автобусная остановка </li>
-										</ul>
+													<!-- детский парк,
+													театр кукол -->
+												</li>
+											</ul>
 
 										<div class="price">
-											от 1700р.*
-											<h5> *цена указана до 2 человек </h5>
+											от 2400р.*
+											<h5> *цена указана до 3 человек (1 сутки) </h5>
 										</div>
-										<button class="winBooking">Забронировать</button>
-									</div>
-								</div>
-
-							<li>
-								<div class="roomCard">
-									<div class="roomPhoto">
-										<img src="img/room0_00.jpg">
-										<h1> Однокомнатная </h1>
-									</div>
-									<div class="roomInfa">
-
-										<div class="roomSize">
-											<p> Размер квартиры - 32м²
-											<h5>1-4 человека</h5>
-										</div>
-
-										<p> О квартире:
-										<ul>
-											<li> Большая двуспальная кровать </li>
-											<li> Вид на город </li>
-											<li> Быстрый интернет </li>
-											<li> Парковка </li>
-										</ul>
-
-										<p>Инфраструктура рядом:
-										<ul>
-											<li>аквапарк Атолл, площадь Ленина, площадь Мира, ресторан «Додо Пицца»
-											</li>
-										</ul>
-
-										<div class="price">
-											от 1300р.*
-											<h5> *цена указана до 2 человек </h5>
-										</div>
-										<button class="winBooking">Забронировать</button>
-									</div>
-								</div>
-
-							<li>
-								<div class="roomCard">
-									<div class="roomPhoto">
-										<img src="img/room1_00.jpg">
-										<h1> Однокомнатная </h1>
-									</div>
-									<div class="roomInfa">
-
-										<div class="roomSize">
-											<p> Размер квартиры - 45м²
-											<h5>1-4 человека</h5>
-										</div>
-
-										<p> О квартире:
-										<ul>
-											<li> Услуга "Завтрак в номер" </li>
-											<li> Сад с беседкой и мангалом </li>
-											<li> Зоны для курения </li>
-											<li> Проведение праздников </li>
-											<li> Парковка </li>
-										</ul>
-
-										<p>Инфраструктура рядом:
-										<ul>
-											<li> продуктовые магазины, автобусная остановка </li>
-										</ul>
-
-										<div class="price">
-											от 1500р.*
-											<h5> *цена указана до 2 человек </h5>
-										</div>
-										<button class="winBooking">Забронировать</button>
-									</div>
-								</div>
-
-							<li>
-								<div class="roomCard">
-									<div class="roomPhoto">
-										<img src="img/room2_00.png">
-										<h1> Однокомнатная </h1>
-									</div>
-									<div class="roomInfa">
-
-										<div class="roomSize">
-											<p> Размер квартиры - 60м²
-											<h5>1-4 человека</h5>
-										</div>
-
-										<p> О квартире:
-										<ul>
-											<li> Большая двуспальная кровать </li>
-											<li> Вид на город </li>
-											<li> Быстрый интернет </li>
-											<li> Услуга "Завтрак в номер" </li>
-											<li> Парковка </li>
-										</ul>
-
-										<p>Инфраструктура рядом:
-										<ul>
-											<li> продуктовые магазины, автобусная остановка </li>
-										</ul>
-
-										<div class="price">
-											от 1700р.*
-											<h5> *цена указана до 2 человек </h5>
-										</div>
-										<button class="winBooking">Забронировать</button>
+										<button class="Open_Modal_Window_Button">Забронировать</button>
 									</div>
 								</div>
 
@@ -783,7 +862,7 @@
 					<h3> Заполните форму с информацией и мы отправим вам e-mail подтверждение </h3>
 				</div>
 				<div>
-					<button>Забронировать</button> 
+					<button class="Open_Modal_Window_Button">Забронировать</button>
 				</div>
 
 				<!-- <div class="mainBookingForm">
@@ -801,40 +880,38 @@
 				<h2>Нижегородская область, город Кстово ул.Чернышевского д.1</h2>
 				<hr color="#ffa958">
 
-				<h4> Телеофон: +7 (951) 916-46-03 </h4>
+				<h4> Телефон: +7 (951) 916-46-03 </h4>
 				<h4> E-mail: t9519164603@mail.ru </h4>
-				<h4> Режим работы: с 7:00 до 23:00* <span> (заселение круглосуточно - только при бронировании заранее)</span> </h4>
+				<h4> Режим работы: с 7:00 до 23:00* <span> (заселение круглосуточно - только при бронировании
+						заранее)</span> </h4>
 
 				<div class="icons">
 
-					<a href="#rooms">
+					<!-- <a href="#rooms">
 						<div class="darkIcon">
 							<div class="iconsCircle">
-								<!-- change url -->
 								<img src="img/telegram.svg" title="mainphoto">
 							</div>
 						</div>
-					</a>
-	
-					<a href="#rooms">
+					</a> -->
+
+					<a href="https://vk.com/domashniy_uyut_kstovo" target="_blank">
 						<div class="darkIcon">
 							<div class="iconsCircle">
-								<!-- change url -->
 								<img src="img/vk.svg" title="mainphoto">
 							</div>
 						</div>
 					</a>
-	
-	
-					<a href="#rooms">
+
+
+					<!-- <a href="#rooms">
 						<div class="darkIcon">
 							<div class="iconsCircle">
-								<!-- change url -->
 								<img src="img/whatsapp.svg" title="mainphoto">
 							</div>
 						</div>
-					</a>
-					
+					</a> -->
+
 				</div>
 
 			</div>
@@ -851,18 +928,25 @@
 	</footer> -->
 
 	<div id="modalW" class="modalW">
-		<div class="modalWin modalWin_Book_Form">
+		<!-- ModalWin_BookForm_Hidden -->
+		<div id="modalWin" class="modalWin ModalWin_BookForm">
 			<div class="modalWinBooking" id="modal">
-				<div class="closeModalWin">
-					✕
+				<div id="closeModalWin" class="closeModalWin">
+					<h2> ✕ </h2>
+					<!-- <button> ✕ </button>  -->
 				</div>
-				Бронирование на сайте временно не доступно, для бронирования звоните по телефону <a title="Позвонить" href="tel: +7(951)916-46-03"> <u> +7 (951) 916-46-03 </u> </a> <br>
+				<div>
+					Бронирование на сайте временно не доступно, для бронирования звоните по телефону <a
+						title="Позвонить" href="tel: +7(951)916-46-03"> <u> +7 (951) 916-46-03 </u> </a>
+				</div>
+
+				<br>
 				<a title="Позвонить" href="tel: +7(951)916-46-03"> <button> Позвонить </button> </a>
 			</div>
 		</div>
 	</div>
-	
-	 <!-- <script>
+
+	<!-- <script>
 	  var modal = document.querySelector('.modal_win');
 	  var overflow = document.createElement('div');
 	  function openWin() {
@@ -927,10 +1011,11 @@
 	<!-- <script src="js/bootstrap.min.js"></script> -->
 
 	<!-- <script src="js/headerScroll.js"></script> -->
-	<script src="index.js"></script>
+	<script type="text/javascript" src="index.js"></script>
 
-	
-	<script src="carouselRoomCards.js"></script>
+
+	<script type="text/javascript" src="carouselRoomCards.js"></script>
+	<script type="text/javascript" src="bookingModalWindow.js"></script>
 
 </body>
 
